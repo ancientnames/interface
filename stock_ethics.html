@@ -1,0 +1,631 @@
+<html>
+    <head>
+        <title>The Ethics of Stock Investments</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+    <!-- Side navigation -->
+    <div class="sidenav">
+        <a href="reals.html">reals</a>
+        <a href="fictions.html">fictions</a>
+        <a href="thinkings.html">thinkings</a>
+        <a href="about.html">about</a>
+    </div>
+    
+    <!-- main body -->
+    <div class="main">
+        <h1>The Ethics of Stock Investment</h1>
+            <h2>Introduction</h2>
+            <p>
+                For a good while, "invest in stocks" has been common retirement advice -- to the extent that employer-provided retirement programs like 401(k)s are heavily designed around the concept of stock investment.
+                This is for a very simple reason: <a href="https://www.youtube.com/watch?v=8E1M8f3PYQ8">stocks go up</a> (eventually!).
+                However, as long as stocks have existed, people have wondered whether you should actually invest in them. 
+                After all, companies have done all sorts of evil stuff and, if you own an index fund (as most passive investors do), that means that you own part of a thing that does evil stuff.
+            </p>
+            <p>
+                Here are some reasons to be suspicious:
+            </p>
+            <ul>
+                <li>
+                    Shares of stock reflect ownership in a company. If people takes ownership something and that something causes bad things to happen, they ought to take ownership of those bad things too.
+                </li>
+                <li>
+                    Stocks only exist because companies benefit from selling them. 
+                    Buying stock helps companies do this.
+                    Helping a company that does bad things helps the company do bad things.
+                </li>
+                <li>
+                    People who own stock make money without doing any actual productive work themselves! There <em>has</em> to be a catch!
+                </li>
+            </ul>
+            <p>
+                Still, many people making efficient market assumptions view stock ownership as having no ethical effects.
+                The goal of this article is to explore the effects directly, determining if and how stock purchases impact prices and if and how movements in stock price assist the company.
+            </p>
+            <h2>Exexutive Summary</h2>
+            <p>
+                The following is a brief summary of my findings:
+            </p>
+            <ul>
+                <li>
+                    On short time scales (i.e. 1000-10,000 trades), share prices are mainly driven by trends in what trades are being made rather than fundamental trends in the company itself.
+                    This is not rational but it <em>is</em> in keeping with the efficient market hypothesis: some trades provide information about companies and some do not, but separating the informative trades from the noisy ones is non-trivial.     
+                    Over long time-scales (i.e. months or years), this impact must revert somehow in order for the market to make sense.               
+                </li>
+                <li>
+                    The impact of purchasing stocks on the share price can be quantified and is surprisingly large. As the size of the purchase gets larger, the increase in price becomes larger but with diminishing returns.
+                </li>
+                <li>
+                    The company associated with a given stock benefits when the share price goes up both becomes companies tend to own their own stocks in the form of treasury shares and because of better opportunities in equity financing.
+                    However, while the relationship between share price increases and equity financing is clear, the relationship with treasury shares is not. 
+                    It could be an order of magnitude more important or it could have no impact.
+                </li>
+                <li>
+                    For people concerned about animal suffering in factory farms, divesting to the socially aware index fund $VEGN probably saves at least several animal lives per thousand dollars per year. 
+                    Because the price-efficiency is bottle-necked mainly by expense ratios, investing in individual stocks or just divesting specifically from companies engaged in factory farming could be dramatically more efficient.
+                </li>
+            </ul>
+                <h2>How Does Buying Shares of Stock Directly Share price?</h2>
+                    <p>
+                        Divestment is often framed as a deliberate action -- choosing not to invest in a stock that would otherwise be invested in.
+                        However, investing money is <em>not the default</em>:
+                        People who invest are making the <em>choice</em> to take ownership of potentially unethical companies!
+                        If divestment reduces harms, then those who invest in unethical companies are making a decision that harms others for the sake of monetary gain.  
+                        As a result, divesting should be the default position rather than a super-rogative action: 
+                        "Not divesting", or <em>going out of one's way to harm others for monetary gain</em> is basically textbook evil.
+                    </p>
+                    <p>
+                        So let's not ask "is divestment effective?". Let's ask "is investing in unethical companies evil?" If one has invested in ethical companies <em>without even checking</em> whether it causes harm despite the obvious moral hazard, it's obviously evil. However, for the rest of us, the question becomes one of how much harm investing causes. To answer this, one must both determine whether purchasing stock impacts the share price and whether share price impacts how harmful the company is. Below I find that <u>purchasing <em>x</em> dollars of stock can be expected to roughly move the stock's market capitalization upward by 10<em>x</em> -- or at least that order of magnitude.</u>
+                    </p>
+                    <h3>Bid-Ask Spread Models and Supply-Demand Equilibria of Share Price</h3>
+                        <p>
+                            The most straightforward way that buying shares impacts economics is through the stock market's <a href="https://education.howthemarketworks.com/supply-and-demand-examples-stock-market/">supply-demand curve</a>.
+                            One can imagine the stock market as being composed of many buyers and sellers who have a price-point at which they are willing to buy/sell and an amount they are able to exchange.
+                            These people trade off, buying and selling with each other until the stock price reaches an equilibrium where all mutually acceptable trades have been made and no more can occur.
+                            The difference between the highest price at which a buyer will buy and the lowest price at which a seller will sell is given by the <a href="https://www.investopedia.com/terms/b/bid-askspread.asp">bid-ask spread</a>. 
+                            This may be represented as an absolute value (a bid-ask spread of $1 on a share valued by buyers at $99 and sellers at $100) or as a percent difference (a bid-ask spread of 1%).
+                            The bid-ask spread of index-funds like $SPY is often around <a href="https://screener.fidelity.com/ftgw/etf/goto/snapshot/quote.jhtml?symbols=SPY">0.01%</a>.
+                        </p>
+                        <p>
+                            To a <em>very</em> first approximation, a customer willing to buy a share of stock at market price is equivalent to briefly moving the stock's bid (what it will be bought for) to its ask (what it will sell for). 
+                            If the customer purchases as many shares as the sellers are willing to sell at that price, the effect to a first-approximation is to raise the price by the bid-ask spread.
+                            Note that this does not mean that one can just crash the economy by selling to 10,000 trades each moving the bid-ask spread by 0.01% because many sellers would be willing to sell even more if offered a higher price.
+                            The bid-ask spread is not the same at every price-point.
+                        </p>
+                        <p>
+                            For $SPY, a good guess for the average number of shares at a price-level is <a href="https://markets.cboe.com/us/equities/market_statistics/book_viewer/">1000</a> shares (based on when I looked). 
+                            Looking at order-books for <a href="https://arxiv.org/abs/1904.03058">$QQQ</a> and <a href="https://arxiv.org/abs/cond-mat/0210710">$SPY</a> suggest a better guess might be 10,000.
+                            This is equivalent to around $3,000,000 or 0.00001% of the S&P500's <a href="https://ycharts.com/indicators/sp_500_market_cap">26 trillion dollar market capitalization</a> per 0.01% price move (in 2020).
+                            In other words, investing a dollar in the S&P500 roughly increases the S&P500's market capitalization by a thousand dollars.
+                        </p>
+                        <p>
+                            This is surprisingly large. By default, one would expect a dollar invested to move the market by a dollar, not a <em>thousand</em> dollars.
+                        </p>
+                    <h3>Price Response Functions in Literature</h3>
+                        <p>
+                            "<a href="https://arxiv.org/abs/cond-mat/0210710">More statistical properties of order books and price impact</a>" discusses the price impact function: the quantitative relationship behind how a market order of a given volume affects the price. 
+                            This is exactly the function we need to get a sense of the impact of purchasing stocks on the stock price.
+                            Moreover it can be used to help ground the price-response predicted above using bid-ask spread models.
+                            Mathematically, the function is defined as:
+                        </p> 
+                        <p>
+                            R(V,&tau;) = average( [m(t+&tau;)-m(t)] | V )
+                        </p>
+                        <p>
+                            where V represents the volume of a market buy-order (i.e. an order to purchase V shares of a stock at its market price) at time t, &tau; represents the elapsed time since purchase, and m(t) represents the market value of a share at time t. 
+                            The article notes that, while R is often assumed to have a linear response with respect to volume for simplicity (i.e. R &asymp; c(&tau;)*V), the impact is actually sublinear with respect to volume (e.g. R &asymp; c(&tau;)*ln(V)).
+                            Nevertheless, a linear response assumption is reasonable if the volume is not straying too far from zero -- which is reasonable in the case of stock purchases made by individual investors.
+                        </p>
+                        <p>
+                            "<a href="https://arxiv.org/abs/cond-mat/0207428">Single Curve Collapse of the Price Impact Function for the New York Stock Exchange</a>" explores the price-response function further, noting that the price-response functions for the 1000 most highly capitalized stocks are all proportional to each other once each stock is normalized by its average size.
+                            As shown in figure 2, stocks with greater market capitalization also produce smaller price responses to normalized volume.
+                            This plot can also be used to get a sense of the price-response of index-funds since series T (in the plot) reflects high market-capitalization stocks and index-funds are clearly high market capitalization.
+                            One only needs to know the normalized volume/trade-size for a typical retail investor.
+                        </p>
+                        <p>
+                            Determining the average trade-size without data is challenging without stock data but there is some information in the literature:
+                        </p>
+                        <ul>
+                            <li>
+                                "<a href="https://www.sciencedirect.com/science/article/abs/pii/0304405X9390029B">Stealth trading and volatility: Which trades move prices?</a>" (in 1993) defines medium-size trades as falling between 500 and 9900 shares (although most trades are small, there are also a small number of large trades).
+                            </li>
+                            <li>
+                                "<a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1540-6261.1985.tb04996.x">An Investigation of Transactions Data for NYSE Stocks</a> (in 1985) gives average trade sizes around 1000 shares, however these trended up by 195% between 1971 and 1982.
+                            </li>
+                            <li>
+                                "<a href="https://arxiv.org/abs/1011.6402">The Price Impact of Order Book Events</a>" (in 2011) which shows an average trade volume of 1650 shares over many stocks and upwards of 10000 shares for some high liquidity stocks like Bank of America.
+                            </li>
+                        </ul>
+                        <p>
+                            Note however that some of these papers are rather outdated.
+                            This is an issue both because high frequency trading may have changed volume purchasing behavior and because the latter paper notes that average trade size trended up by 195% from 1971 to 1982. If this trend continues, volumes could be much higher in 2020.
+                            Alone, this is not enough to determine trade-sizes today (since it might be larger) but, fortunately, the trade-sizes proposed by the papers undershoot but stay on the same order of magnitude at the trade-size at a given price-level.
+                            In some sense, the price-level might be considered a <em>lower bound</em> since anyone wealthy who thinks they'll make money trading one share at a given price-level will try to trade as many shares as possible at that price-level to maximize absolute return (caveat: as one increases the amount of stock in a portfolio, those shares actually become less valuable to the portfolio owner due to the stock purchases' diminishing positive effects on diversification. However, this effect should be pretty negligible at the volume levels being considered here).
+                            Overall though, an average transaction of 10,000 shares is probably good enough for estimates. It reflects recent average trade volumes of high liquidity stocks and makes sense in the context of the estimated number of shares at each price-level. 
+                        </p>
+                        <p>
+                            This is still somewhat problematic to do for index funds however: 
+                            Many index funds tend to be strongly correlated with the market (e.g. the S&P500) but have very different trading volumes and likely experience different implied  changes to stock price at a given time.
+                            This implies the possibility of price-response arbitrage where one sells into lower trade-volume or market-capitalization index funds with large price-response functions and buys into index funds tracking a similar metric with higher trade-volume.
+                            More importantly, this creates a free variable when determining the impact of buying an index-fund: putting money into $SPY (high volume, S&P500 tracking) would in principle cause a larger price increase than putting the same amount of money into $VOO (lower volume, S&P500 tracking).
+                            For the moment, price-impact on $SPY will continue to be analyzed due to its large market capitalization for an index ETF but it should be noted that the impact will likely overestimate the actual impact on the total S&P500 market capitalization.
+                            $SPY only has around <a href="https://www.marketwatch.com/investing/fund/spy">$300 billion</a> or $10<sup>11</sup> in assets in 2020 compared to the 26 trillion market capitalization of the S&amp;P500; its about 100x smaller!
+                        </p>
+                        <p>
+                            Using the above estimate, if someone wants to invest a million dollars in the $SPY, this corresponds to roughly 3000 shares or a normalized volume of 0.3 (given an average volume of 10,000). 
+                            Thus, series T in figure 2 of "Single Curve Collapse of the Price Impact Function for the New York Stock Exchange" produces a price-shift of around 0.0001.
+                            Using the definition of price-response in the paper, this is about a 0.01% move:
+                        </p>
+                        <p>
+                            Price-Shift = ln(p<sub>t+1</sub>)-ln(<sub>t</sub>) = ln(p<sub>t+1</sub>/p<sub>t</sub>) = 0.0001 &rarr; p<sub>t+1</sub> = exp(0.0001)p<sub>t</sub> = 1.0001p<sub>t+1</sub>
+                        </p>
+                        <p>
+                            This also is not a one-off.
+                            "<a href="https://www.tandfonline.com/doi/abs/10.1080/14697680500151400">The immediate price impact of trades on the Australian Stock Exchange</a>" studies a similar price-response curve and, in figure 2, plots percentage price-shift against normalized volume.
+                            Again, the price-response curves are stratified by market capitalization and, again, a normalized volume of 0.3 provides a price-shift on the same order of magnitude as 0.0001 (~5*10<sup>-5</sup>).
+                            An interesting note to make here is that normalized volumes between 0.01 and 0.1 have approximately <em>the same</em> price-response, which suggests that even buying/selling very small amounts of stock can have an outsized impact.
+                        </p>
+                        <p>
+                            Another note is that while "Single Curve Collapse of the Price Impact Function for the New York Stock Exchange" normalizes "the transaction size by dividing by its average value for each stock in each year", this paper uses a slightly different method: the <em>normalized daily-normalized volume</em>.
+                            In essence, the volume of each trade is divided by the daily volume on the day the trade was made, the average of all these daily-normalized volumes was taken, and then all the trades were divided by that average.
+                            This has no significant impact on the result.
+                        </p>
+                        <p>
+                            Finally, "<a href="https://www.sciencedirect.com/science/article/abs/pii/0304405X9090013P">Large-block transactions, the speed of response, and temporary and permanent stock-price effects</a>" assesses the permanent price impact (i.e. difference between pre-trade equilibrium and post-trade equilibrium) of block trades and finds a similar outsized impact as the semi-generous model in Figure 1 and 2:
+                            Trading 0.1% of an equity causes a price-impact of around 1% of its value.
+                            Since a million dollars is 0.0003% of the $SPY's assets, this would suggest a 0.00003 price-move (0.003%) in the $SPY assuming linearity.
+                            This can be contrasted with the price-shifts of 0.0001 and 0.00005 seen in the other academic papers. Not bad!
+                        </p>
+                    <h3>Checking for Impacts of Market Capitalization</h3>
+                        <p>
+                            Above, index-fund ETFs are treated as if they have the same market-capitalization as high liquidity companies when market-capitalization is known to lower the price-response. 
+                            This assumption can be checked and it turns out that it's wrong:
+                        </p>
+                        <ul>
+                            <li>
+                                In figure 3 of "Single Curve Collapse of the Price Impact Function for the New York Stock Exchange", the largest market-capitalization shown is around $10<sup>8</sup>.
+                                This is three orders of magnitude lower than the market capitalization of $SPY, which suggests an underestimate it being made.
+                                The paper does not appear to directly provide information on the actual market capitalizations of the companies it is discussing.
+                            </li>
+                            <li>
+                                In figure 6 of "The immediate price impact of trades on the Australian Stock Exchange", the largest market-capitalization is almost 10<sup>11</sup>, which is pretty close but still lower than the number of assets in $SPY.
+                                Fortunately, the the highest capitalization group is explicitly defined in this paper as the stocks $NAB, $BHP, and $CBA.
+                                In 2020, these have market capitalizations of <a href="https://www.marketwatch.com/investing/stock/nab?countrycode=au">60 billion</a>, <a href="/https://www.marketwatch.com/investing/stock/bhp">125 billion</a> and <a href="https://www.marketwatch.com/investing/stock/cba?countrycode=au">128 billion</a> dollars respectively.
+                                This puts the high liquidity stock group at about a third of the market capitalization that $SPY has.
+                            </li>
+                        </ul>
+                        <p>
+                            Note that the assumption is much more reasonable in the latter paper (a factor of three off) than in the former paper (a factor of 1000 off)!
+                            At this point, one has two options: directly try to apply the market-capitalization adjusted master curve to the $SPY or just rescale the inputs and outputs of the stratified plots analyzed earlier.
+                        </p>
+                        <p>
+                            Using the master curve would be ideal but, unfortunately, it is not presented in the papers in an easily interpretable way.
+                            For instance, take the high market-capitalization group in "Single Curve Collapse of the Price Impact Function for the New York Stock Exchange" with an average market capitalization of 10<sup>8</sup>.
+                            This implies that one should divide the normalized volume by (market-capitalization)<sup>&delta;</sup>=(2*10<sup>8</sup>)<sup>0.3</sup>=300. 
+                            Since the average normalized trade-volume is one, this means that the average <em>rescaled</em> normalized trade volume is only 3*10<sup>-3</sup>.
+                            This is actually <em>outside the displayed domain</em> of the master curve (figure 4).
+                            Similar issues emerge in "The immediate price impact of trades on the Australian Stock Exchange" something else must be going on that I'm missing.
+                        </p>
+                        <p>
+                            This leaves the option of just rescaling the inputs and outputs of the stratified curves:
+                        </p>
+                        <p>
+                            In "Single Curve Collapse of the Price Impact Function for the New York Stock Exchange", the ratio between high market capitalization stocks and $SPY is around 10<sup>11</sup>/(2*10<sup>8</sup>)=500 so one divides the normalized volume by 500<sup>0.3</sup>=6.45.
+                            At one million dollars (a normalized volume of 0.3), this produces a rescaled volume of 4.65*10<sup>-2</sup> and yields a price around 2*10<sup>-5</sup>.
+                            Now the price response must be rescaled by dividing by 500<sup>0.3</sup>=6.4 to yield a final price response of 3.3*10<sup>-6</sup>.
+                        </p>
+                        <p>
+                            In "The immediate price impact of trades on the Australian Stock Exchange", the ratio is much smaller: about three. Therefore one divides the normalized volume by (3)<sup>0.2</sup>=1.25 (the exponent 0.2 was the largest value of this exponent noted in the paper)
+                            This produces a recaled renormalized volume of 0.3/1.25=0.24 and yields a price-response of roughly 4*10<sup>-5</sup>.
+                            Now the price-response must be rescaled by dividing by 3<sup>0.4</sup>=1.55 to yield a final price-response of 2.6*10<sup>-5</sup>. 
+                        </p>
+                        <p>
+                            Unfortunately, these estimates do not line up very well -- differing by a factor of 10. This difference is mainly driven by price-response rescaling rather than normalized volume rescaling since, at low normalized volumes, the price response does not vary much.
+                            Moreover, the difference can clearly be seen just by looking at figure 2 in each paper. In both, the lowest price responses are seen in the highest market capitalization groups and correspond to values around 2*10<sup>-5</sup>.
+                            This is true <em>despite</em> those high market capitalization stock groups differing by three orders of magnitude in their absolute market capitalizations.
+                            While both papers agree on rescaling the price response by about (market capitalization)<sup>0.4</sup>, (10<sup>3</sup>)<sup>0.4</sup>=15 -- an order of magnitude discrepancy when the price-response is rescaled.
+                            This basically explains the factor of ten difference.
+                        </p>
+                        <p>
+                            Ultimately, the question of which number to go with is tricky. Since the index fund selected was $SPY, the one corresponding to the New York Stock Exchange makes the most contextual sense.
+                            However, the study on the Australian Stock Exchange happens to have a high market capitalization stock group more in line with the total assets of the $SPY.
+                            For simplicity's sake, I'll just take the geometric mean to get an estimate for the move in stock price caused by a million dollar investment:
+                        </p>
+                        <p>
+                            sqrt(3.3*10<sup>-6</sup>*2.6*10<sup>-5</sup>) = 10<sup>-5</sup> = 0.00001 = 0.001%
+                        </p>
+                        <p>
+                            How does this compare with the bid-ask spread model? Earlier, it was noted that about $3,000,000 produces a 0.01% chance in the $SPY and the bid-ask spread model is implicitly linear.
+                            Thus, at a million dollars, a 0.01%/3 = 0.003% price-response would be expected -- only 3x larger than the geometric mean of the impact I've determined from the literature.
+                        </p>
+                    <h3>Generalizing to the Whole Market</h3>
+                        <p>
+                            The choice of the $SPY was motivated to generically understand the impact of stock purchases. 
+                            However, the $SPY is not the entire market and the S&P00 is not a single stock.
+                            One might be tempted to directly extrapolate the price-response of the $SPY to the whole market but this is not correct for the following reasons:
+                        </p>
+                        <ul>
+                            <li>
+                                The performance of an ETF (the $SPY) does not perfectly track its underlying assets (the S&P500)
+                            </li>
+                            <li>
+                                The S&P500 has a market capitalization 100x that of the $SPY, which implies that the former has greater liquidity than the latter. 
+                                This suggests a smaller price response.
+                            </li>
+                            <li>
+                                The normalized volume per trade of the S&P500 is meaningless because S&P500 trades do not exist. 
+                                Pragmatically, the number of trades is much larger but the volume remains the same so 10,000 is still a reasonable assumption about shares per trade.
+                                Intuitively however, it seems like this number should be larger.
+                            </li>
+                        </ul>
+                        <p>This problem can be solved via a number of approaches:</p>
+                        <ul>
+                            <li>
+                                One can conservatively assume that $SPY purchases <em>only</em> impact the $SPY (1/90th of the total market) and divide the above price responses by a factor of a ninety.
+                                This is equivalent to assuming that, because $SPY is an ETF rather than an individual corporate stock, it diffuses the price response across the entire underlying.
+                            </li>
+                            <li>
+                                One can assume that $SPY moves generalized to the market and divide the price-response by 90<sup>0.4</sup> and divide the price response by a factor of six.
+                            </li>
+                            <li>
+                                One can assume that the volume (in dollars) per trade scales with market capitalization. 
+                                This cannot really be analyzed because reducing the capitalization by a factor of 10-90x risks pushing the rescaled normalized volume off the plots discussed earlier.
+                            </li>
+                        </ul>
+                        <p>
+                            From the above, it is clear that finding the appropriate adjustment factor is difficult. In any case, I will just use the geometric mean sqrt(6*90)=20.
+                            This gives a <b>final price-response estimate</b> of 0.00001/20 = 0.0000005 = 5*10<sup>-7</sup> for a million dollars invested.
+                            Note that a million dollars is only 3.8*10<sup>-8</sup> of the S&P500 -- which suggests that the price-response is about 10x larger than the amount invested.
+                            This is similar to the ratio of impact originally suggested by the literature before adjusting for market-capitalization. 
+                            The downward scaling caused by that adjustment was basically mitigated by the upward scaling (relative to the size of the impacted market) seen when extrapolating the $SPY to the S&P500.
+                        </p>
+                        <p>
+                            Unfortunately, understanding the impact of ETFs in relation to the broader market is even more complex than the above makes it out to be.
+                            For context, despite having a much smaller market capitalization, trades in the $SPY actually make up as much as 24% of <em>trading</em> in the underlying S&P500 stocks according to "<a href="https://www.lyxoretf.at/pdfDocuments/5THE-ROLE-OF-ETFs--IN-INTRADAY-PRICE-DISCOVERYWP-5549243049350179714.pdf">Intraday ETF Trading and the Volatility of the Underlying</a>."
+                            In fact, this paper reflects the broader question of how much moves in ETFs impact the underlying stocks and this has been studied for a while.
+                            The aforementioned paper seeks to separate noise trading and informed trading to understand the impact of each on the S&P500 itself.
+                            Compared to the S&P500 (SPX), $SPY has 2x the variation in one-second returns that the S&P500 has but the paper says little else of use -- it defines "uniformed traders" based on whether $SPY leads the S&P500 value or not,
+                            which begs the question posed here.
+                        </p>
+                <h2>How Long Do Price Changes Last?</h2>
+                    <p>
+                        After reviewing a number of papers, it is unlikely that one can produce a good empirical estimate of how long non-fundamental price-responses last. This is because, as time goes on, the accumulated volatility from normal market behavior grows to dwarf the impact of any single trade. If 1% of a stock is purchased one day, the stock will likely have excess gains the next day because nothing else has happened. However, if a month goes by, whether the stock still has excess gains or not will be close to a coin-flip (albeit one slightly biased by the 1% purchase) because of all the things that might happen over the course of a month. In other words, the longer out one looks from a stock purchase, the harder it becomes to measure its impact on the price. Nevertheless, I think a <u>reasonable estimate for price change durations is around three months due to the impact of quarterly earnings and my own observations about market corrections.</u>
+                    </p>
+                    <h3>Brief Literature Review</h3>
+                        <p>
+                            The existence of a clear price-response to stock market purchases demonstrates, in some sense, that buying stock <em>does</em> have an impact.
+                            Technically speaking, this is not literally an inefficiency -- it's just a consequence of the fact that stock purchases provide information about stock value.
+                            Since distinguishing informative trades from uninformative trades is difficult, people respond by hedging over both possibilities.
+                            As a result, rational investors will treat divestment as potentially legitimate strategic trading if they are not aware that divestment is occurring.
+                            There is plenty of research studying the timeline of these kinds of price moves however actual timeframes claimed include "fifteen minutes", "at least several hours" and "five years":
+                        </p>
+                        <p>
+                            In "<a href="https://archive.org/details/arxiv-cond-mat0106657">Quantifying Stock Price Response to Demand Fluctuations</a>", the correlation between volume imbalance at a given time and stock price at a later time found to decay rapidly. 
+                            Fifteen minutes after the time volume imbalance (delta between volume in buyer initiated and seller initiated trades) was measured, statistical significance had disappeared. 
+                            Insofar as buying shares at market price impacts the price by changing the volume of buyer initiated trades, this action cannot have a lasting effect on the stock market.
+                        </p>
+                        <p>
+                            In "<a href="https://arxiv.org/abs/cond-mat/0210710">More statistical properties of order books and price impact</a>", the impact of buying shares of stock on a price is found to be quasi-permanent (although the time-scale is not specified). 
+                        </p>
+                        <p>
+                            In "<a href="https://arxiv.org/abs/0804.3818">A Theory for Market Impact: How Order Flow Affects Stock Price</a>", there is not evidence mean reversion in the price of a stock after the price has been moved by a trade:
+                        </p>
+                        <blockquote>
+                            "All transactions cause an initial price response <em>l<sub>i</sub></em>, that is enhanced by future values [for fifteen consecutive trades]. 'The market' accepts this new price (which is actually slightly larger than the original impact) as the reference price for at least the next 200 transactions (about 2 hours for AZN). It is possible that decay occurs at a much later time, but error grows quickly and to discern this requires a much larger dataset."
+                        </blockquote>
+                        <p>
+                            In "<a href="https://arxiv.org/abs/cond-mat/0307332">Fluctuations and response in financial markets: the subtle nature of `random' price changes</a>", similar points as the ones observed above are made.
+                            The paper begins by discussing whether the stock market is <em>diffusive</em>, which intuitively means that price moves are completely random.
+                            Evidence for this naturally also implies that price-impact is permanent and the paper provides evidence for this comparable to the observation of quasi-permanency mentioned earlier.
+                            Figures 1 and 2 show that diffusion still holds even after a thousand trades have past, although some stocks do see mean-reverting effects.
+                            Similarly, figures 3 and 4 show that the price-response of a purchase persists for over two-thousand trades (this is not that many in the grand scheme of things though; <a href="https://www.quora.com/What-is-the-average-total-number-of-trades-daily-on-nyse?share=1">the New York Stock Exchange sees 2-3 million trades per day</a>).
+                            Here's a particularly relevant quote -- implying that market inefficiencies can last for a long time:
+                        </p>
+                        <blockquote>
+                            "This conlusion seems to imply that the price may, on the long run, wander arbitrarily far from the fundamental price, which would be absurd. 
+                            However, even if one assumes that the fundamental price is independent of time, a typical 3% noise induced daily volatility would lead to a significant (say a factor of 2) difference between the traded price and the fundamental price only after a few years. 
+                            Since the fundamental price of a company is probably difficult to determine better than within a factor of two, say, one only expects fundamental effects to be relevant on very long time scales."
+                        </blockquote>
+                        <p>
+                            In <a href="https://lets-fund.org/impact-investing/#ftnt37">"Donating Effectively is usually better than Impact investing"</a>, short-term market efficiencies are claimed to exist on a time-scale of three months (with expert disagreement as to whether they can last longer than six).
+                            This is mostly based on the impacts of adding a stock to an index fund and, as noted, the impact is mixed.
+                            "<a href="https://www.jstor.org/stable/10.1086/209722?seq=1#metadata_info_tab_contents">New Evidence on Stock Price Effects Associated with Changes in the S&P 500 Index</a>" agrees that the evidence is mixed.
+                            "<a href="https://www.tandfonline.com/doi/abs/10.2469/faj.v64.n5.7">Long-Term Price Effect of S&P 500 Addition and Earnings Quality</a>" (a more recent paper) finds adding a stock to the S&P500 to have a somewhat permanent effect (e.g. lasting more than five years).
+                        </p>
+                        <p>
+                            Probably, the best way to determine how long the price of an index can wander is by looking at the frequency of uncatalyzed (i.e. not triggered by an obvious event in the real world) market corrections. For example, on 9/2/2020, the market peaked and then corrected by around 10% through 9/24/2020 (and may continue to drop past then) -- sending the market back near its price on 7/31/2020 -- for no obvious reason other than the index seeming clearly overpriced (perhaps due to non-fundamental trading activity). This indicates that non-fundamental price movements (i.e. price response from noise trading) can last in the market for at least a month sometimes. Similarly, stocks are partially based on quarterly earnings reports which implies that non-fundamental price-moves should be corrected approximately quarterly (i.e. every three months). Given this, a reasonable guess for duration of price-response is probably on the order of one to three months.
+                        </p>
+                    <h3>Fossil Fuel Divestment Event Study</h3>
+                        <p>
+                            In "<a href="https://www.mdpi.com/2071-1050/11/11/3122">The Impact of Divestment Announcements on the Share Price of Fossil Fuel Stocks</a>", the effect of twenty four fossil fuel stock divestment announcements on cumulative average abnormal returns (relative to the MSCI all-country world index) is looked at.
+                            Notably, figure 2 shows that the average cumulative abnormal returns for all divestment announcements over time shows a clear drop on the day of the announcement. 
+                            Stocks fail to recover from this drop ten days after, twenty days after, one-hundred twenty days after and two-hundred sixty days after the announcement declaration.
+                            While this result is only statistically meaningful up to ten days after the event (because auto-correlated stock returns make it hard to separate divestment effects from general business trends), it is another indication that divestment has impacts over a long time-scale.
+                        </p>
+                        <p>
+                            It is worth checking this result with the price-responses claimed earlier. The Rockefeller Brother's Fund divestment (one of the most influential divestment events according to the paper) had <a href="https://www.barrons.com/articles/rockefeller-brothers-fund-profits-from-divesting-fossil-fuels-01589319900">less than 7% of its 1.1 billion dollars</a> (read: around 7%) of assets in its portfolio -- implying that $77,000,000 was invested. The fossil fuels industry is around <a href="https://about.bnef.com/blog/fossil-fuel-divestment-5-trillion-challenge/">five trillion dollars</a> so the Rockefeller Brothers divested around 0.00154% of the fossil fuel industry. In contrast, the S&P Global Oil index experienced a <a href="https://www.spglobal.com/spdji/en/indices/equity/sp-global-oil-index/#overview">1.3% drop between 9/22/2014 and 9/23/2014</a> corresponding to the time of the event. A 0.00154% market-capitalization divestment in fossil fuel as indicated above should only cause a <em>hundredth</em> of that drop. What's going on?
+                        </p>
+                        <p>
+                            In short, many of these divestment events occurred in the same time-frame as a major energy sector crash. The <a href="https://www.cnbc.com/quotes/?symbol=.SPNY">S&P500 global energy sector peaked</a> in April of 2014 before plummeting around 40% by June of 2015 due to a <a href="https://www.investopedia.com/ask/answers/030315/why-did-oil-prices-drop-so-much-2014.asp">major drop in the price of oil</a>. Hence, price-response has little to due with the drop in fossil fuel values during the Rockefeller Brother's Fund divestment campaigned, which is also right in the middle of the sampling range for divestment events.
+                            The paper notes that "the impact of clustering events can also be mitigated by including an industry variable in the select expected return models", but it elects not to do this because it may depress excess returns caused by campaigns that generically target that industry.
+                            In the future, it might be useful to analyze divestment while adjusting stock trends for <em>oil price</em>.
+                        </p>
+                        <p>
+                            Ultimately, no conclusion can be drawn from analyzing divestment events here.
+                        </p>
+                <h2>Does Stock Price Impact Company Activities?</h2>
+                    <h3>General Effects</h3>
+                    Companies <a href="https://money.stackexchange.com/questions/1795/when-a-stock-price-rises-does-the-company-get-more-money">do not directly make money when their stock prices rise</a>. However:
+                    <ul>
+                        <li>
+                            Companies can issue secondary offerings, selling some stock for cash via <a href="https://www.investopedia.com/investing/why-do-companies-care-about-their-stock-prices/">equity financing</a>. Companies also make money from their initial offering -- which often reflects expected returns.
+                        </li>
+                        <li>
+                            Companies can own <a href="https://www.thebalance.com/treasury-stock-on-the-balance-sheet-357297">treasury stock</a>, which experiences an increase in value when stock prices rise.
+                        </li>
+                    </ul>
+                    <h3>Treasury Shares</h3>
+                        <p>
+                            The number of treasury shares a company owns can be found in its balance sheet. 
+                            The below table looks at treasury shares in 2019 for the <a href="https://www.investopedia.com/top-10-s-and-p-500-stocks-by-index-weight-4843111">top ten companies in the S&P500</a>. 
+                            <a href="https://www.marketwatch.com/investing/Stock/MSFT/financials/balance-sheet">Microsoft</a>,
+                            <a href="https://www.marketwatch.com/investing/stock/aapl/financials/balance-sheet">Apple</a>,
+                            <a href="https://www.marketwatch.com/investing/stock/fb/financials/balance-sheet">Facebook</a>,
+                            <a href="https://www.marketwatch.com/investing/stock/googl/financials/balance-sheet">Google</a> (including $GOOG) and
+                            <a href="https://www.marketwatch.com/investing/stock/v/financials/balance-sheet">Visa</a> have no treasury shares so are excluded.
+                            Note that market capitalization reflects the total value of common shares, which <em>do not</em> include treasury shares. 
+                            The purpose of including market capitalization here is to make it easy to match up price-responses in units of market-capitalization to their impact on treasury shares.
+                        </p>
+                        <table>
+                            <tr>
+                                <th>
+                                    Company
+                                </th>
+                                <th>
+                                    Treasury Share Value
+                                </th>
+                                <th>
+                                    Market Capitalization
+                                </th>
+                                <th>
+                                    Treasury Shares/Market Capitalization
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Amazon
+                                </th>
+                                <th>
+                                    <a href="https://www.marketwatch.com/investing/stock/amzn/financials/balance-sheet">1.84B</a>
+                                </th>
+                                <th>
+                                    <a href="https://finance.yahoo.com/quote/amzn/">1.596T</a>
+                                </th>
+                                <th>
+                                    0.116%
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Johnson & Jonhson
+                                </th>
+                                <th>
+                                    <a href="https://www.marketwatch.com/investing/stock/jnj/financials/balance-sheet">38.42B</a>
+                                </th>
+                                <th>
+                                    <a href="https://finance.yahoo.com/quote/JNJ?p=JNJ&.tsrc=fin-srch">375.337B</a>
+                                </th>
+                                <th>
+                                    10.236%
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Berkshire Hathaway (B Shares)
+                                </th>
+                                <th>
+                                    <a href="https://www.marketwatch.com/investing/stock/brk.b/financials/balance-sheet">8.13B</a>
+                                </th>
+                                <th>
+                                    <a href="hhttps://finance.yahoo.com/quote/BRK-B?p=BRK-B&.tsrc=fin-srch">444.859B</a>
+                                </th>
+                                <th>
+                                    1.828%
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    JP Morgan
+                                </th>
+                                <th>
+                                    <a href="https://www.marketwatch.com/investing/stock/jpm/financials/balance-sheet">83.05B</a>
+                                </th>
+                                <th>
+                                    <a href="https://finance.yahoo.com/quote/JPM?p=JPM&.tsrc=fin-srch">293.337B</a>
+                                </th>
+                                <th>
+                                    23.312%
+                                </th>
+                            </tr>
+                        </table>
+                        <p>
+                            The overall average ratio of treasury shares to market capitalization for the top ten companies in the S&P500 is therefore 3.54% (note that this counts the aforementioned companies with no treasury shares).
+                            Since the sample of companies with treasury shares is still relatively low, it is worth going further down the list:
+                            <a href="https://www.marketwatch.com/investing/Stock/wmt/financials/balance-sheet">Walmart</a>, 
+                            <a href="https://www.marketwatch.com/investing/stock/unh/financials/balance-sheet">United Healthcare</a> and
+                            <a href="https://www.marketwatch.com/investing/stock/intc/financials/balance-sheet">Intel</a> had no treasury shares and were excluded.
+                        </p>
+                        <table>
+                            <tr>
+                                <th>
+                                    Company
+                                </th>
+                                <th>
+                                    Treasury Share Value
+                                </th>
+                                <th>
+                                    Market Capitalization
+                                </th>
+                                <th>
+                                    Treasury Shares/Market Capitalization
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Mastercard
+                                </th>
+                                <th>
+                                    <a href="https://www.marketwatch.com/investing/stock/ma/financials/balance-sheet">32.21B</a>
+                                </th>
+                                <th>
+                                    <a href="https://www.marketwatch.com/investing/stock/ma">295.78B</a>
+                                </th>
+                                <th>
+                                    10.890%
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Proctor & Gamble
+                                </th>
+                                <th>
+                                    <a href="https://www.marketwatch.com/investing/stock/pg/financials/balance-sheet">100.41B</a>
+                                </th>
+                                <th>
+                                    <a href="https://www.marketwatch.com/investing/stock/pg">303.22B</a>
+                                </th>
+                                <th>
+                                    33.114%
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Home Depot
+                                </th>
+                                <th>
+                                    <a href="https://www.marketwatch.com/investing/stock/hd/financials/balance-sheet">65.2B</a>
+                                </th>
+                                <th>
+                                    <a href="https://www.marketwatch.com/investing/stock/hd">266.69B</a>
+                                </th>
+                                <th>
+                                    24.447%
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Verizon
+                                </th>
+                                <th>
+                                    <a href="https://www.marketwatch.com/investing/stock/vz/financials/balance-sheet">6.82B</a>
+                                </th>
+                                <th>
+                                    <a href="https://www.marketwatch.com/investing/stock/vz">223.2B</a>
+                                </th>
+                                <th>
+                                    3.047%
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Nvidia
+                                </th>
+                                <th>
+                                    <a href="https://www.marketwatch.com/investing/stock/nvda/financials/balance-sheet">9.81B</a>
+                                </th>
+                                <th>
+                                    <a href="https://www.marketwatch.com/investing/stock/nvda">258.52B</a>
+                                </th>
+                                <th>
+                                    3.795%
+                                </th>
+                            </tr>
+                        </table>
+                        <p>
+                            Including all stocks mentioned so far, the average is now 6.5%. Note that most of the top stocks in the S&P500 are tech stocks, which both tend to not yield dividends and to not own treasury shares.
+                            As a result, the selection method is actually biased towards lower treasury shares per market capitalization than what might be naively expected.
+                            Nevertheless, one should note that there is very large variance in treasury shares and this might matter to divestment impact.
+                            For example, Exxon Mobil has a whopping <a href="https://www.marketwatch.com/investing/Stock/xom/financials/balance-sheet">225.84B</a> in treasury stock compared to a market capitalization of only <a href="https://www.marketwatch.com/investing/stock/xom">174.88B</a>.
+                        </p>
+                        <p>
+                            Overall however, a reasonable ballpark number for the ratio is 5%. That is to say, if the S&P500 was treated as a company, a total increase of <em>x</em> dollars in market capitalization would produce an <em>x</em>/20 gain in the S&P500's wealth.
+                        </p>
+                    <h3>Initial Public Offerings and Secondary Offerings</h3>
+                        <p>
+                            Treasury shares are just the most direct way that companies benefit from stock price moves. 
+                            However, the main reasons that companies sell stock in the first place is to raise money and provide owners with private equity the opportunity to liquidate.
+                            In the case of secondary offerings that have yet to be made, the benefit of a secondary offering is obvious. The <a href="https://www.statista.com/statistics/263289/largest-secondary-equity-offerings-of-all-time/">top ten secondary offerings until June 2019</a> have an aggregate value 139 billion and a typical value on the order of ten billion.
+                            Thus, if a stock rises in value by 0.01%, then its ten billion dollar secondary public offering will make an extra million dollars.
+                        </p>
+                        <p>
+                            Even in the case where there is no secondary public offering, the existence of the initial public offering matters as well -- even if it has already been done <em>after</em> before one's purchase has happened.
+                            This is because the value of shares during a public offering are based on their projected value in the future, which incorporates the possibility (but not necessarily the event happening with 100% confidence!) that other people will go on to make purchases that raise the share price.
+                            This makes the choice to purchase or divest from a stock isopmorphic to <a href="https://en.wikipedia.org/wiki/Newcomb%27s_paradox">Newcomb's Problem</a> in decision theory.
+                            Because the purchaser will purchase the stock, it already costs more than it could have. Because the purchaser will not, it already costs less.
+                            In any case, the <a href="https://en.wikipedia.org/wiki/Initial_public_offering#Largest_IPOs">top ten largest initial public offerings</a> aggregate to 274 billion dollars as of 2020. 
+                            This is larger than the value of secondary public offerings but is on the same order of magnitude.
+                        </p>
+                <h2>Combining Price Effects with Company Effects</h2>
+                    Overall, a company can get $0.0075<em>x</em> of value from a stock investment of $<em>x</em> based on ways the company can extract money from treasury shares and public offerings.
+                    <h3>Price Effect Value Exploitable by Companies Via Treasury Shares</h3>
+                        <p>
+                            Since companies generally own an equivalent of around 5% of the market (note that treasury shares are not actually included in market capitalization), companies can only actually exploit around 5% of the value of the stock's price-response. In practice, the company can only have taken a number of actions -- assuming that they are not actively trading:
+                        </p>
+                        <table>
+                            <tr>
+                                <th>.</th>
+                                <th>buy-hold</th>
+                                <th>sell-hold</th>
+                            </tr>
+                            <tr>
+                                <th>before $<em>x</em> trade</th>
+                                <th>3-month value increase of $0.5<em>x</em>, valued at $0.0125<em>x</em></th>
+                                <th>Trade has no impact</th>
+                            </tr>
+                            <tr>
+                                <th>after $<em>x</em> trade</th>
+                                <th>Purchase was overvalued, loss of $0.5<em>x</em> after 3 months</th>
+                                <th>Sell was overvalued, gain of $0.5<em>x</em></th>
+                            </tr>
+                        </table>
+                        <p>
+                            The value of the 3-month value increase is based on what would happen if one invested that value increase in the stock market for three months. This would produce an expected return of 2.5% and 2.5% of $0.5<em>x</em> is $0.0125<em>x</em>.
+                        </p>
+                        <p>
+                            From the above table, one can see symmetries. If the action happens before the noise trade (and chance of buy/sell is 50/50), there's a 50% chance of a temporary value increase of $0.0125<em>x</em> and 50% chance of nothing happening. If it happens after, there's a 50% chance of gaining $0.5<em>x</em> immediately and a 50% chance of losing it after three months. In this case, the principal $0.5<em>x</em> value cancels out and all that is left is the option to keep it for three months if a loss occurs. In effect, this also means a 50% chance of a temporary value increase of $0.0125<em>x</em>. Thus, the expected value of the noise-trade for the company is only 50% the $0.0125<em>x</em> value of the temporary value increase: $0.00625<em>x</em> assuming equal odds of the company buying and selling.
+                        </p>
+                    <h3>Price Effect Value Exploitable by Companies Via Public Offerings</h3>
+                        <p>
+                            In order to understand the effect of stock purchases via initial and secondary public offerings, one needs an estimate for the overall magnitude of them.
+                            Since the goal here is to generically think about the entire market, a conservative value could be about 139 billion dollars, based on the knowledge that at least ten individual companies had secondary public offerings on the order of ten billion each.
+                            This estimate is obviously conservative compared to the very large market capitalization of the S&P500 at 26 trillion dollars (only around 0.53% of it), but should be about okay.
+                            Assuming that initial public offerings are just as important (in reality, they are more-so) doubles this to two-hundred eighty billion dollars (1.06% of the S&P500) which may as well be rounded to 1% for simplicity.
+                        </p>
+                        <p>
+                            How much do noise trades elevate the value of public offerings by? Because of mean reversion, investors only benefit from noise trades if they sell during the three month window where the trade applies. The <a href="https://www.cnbc.com/2017/08/24/technology-killing-off-corporations-average-lifespan-of-company-under-20-years.html">average company lifespan of about twenty years</a> or 240 months so, if the investor sells randomly during this point, the odds of benefitting are 3/240=1.25%. Thus one multiplies these odds by the price response and then by the percent of the market: 1.25%*10<em>x</em>*1% = 0.00125<em>x</em>.
+                        </p>
+                        <p>
+                            Combining this with the value from treasury shares gives 0.00625+0.00125=$0.0075<em>x</em>.
+                        </p>
+                    <h3>A Model by Someone Else</h3>
+                        <p>
+                            "<a href="https://sideways-view.com/2019/05/25/analyzing-divestment/">Analyzing Divestment</a>" by Paul Christiano uses efficient market assumptions incorporating risk premiums to make the following observation:
+                        </p>
+                        <blockquote>
+                            So, if K = 0.2, r/r̃ = 10, O = 0.75/year, then me divesting $1 will decrease EvilCo’s output by $1 * 0.2 / 10.2 * 0.75/year = $0.015/year.
+                        </blockquote>
+                        <p>
+                            This suggests that every dollar invested has a roughly 0.015x multiplier benefit to the company per year. Assuming a company life-span of twenty years, this implies an aggregate output of 0.015*20 = $0.3<em>x</em>.
+                        </p>
+                    <h3>Ethical Context</h3>
+                        <h3>Animals</h3>
+                            <p>
+                                Approximately <a href="https://animalclock.org/">ten billion lands animals are killed per year</a> in the United States.
+                                To the extent that the United States economy is represented by the S&P500's twenty-six trillion dollar market capitalization, this implies 0.0004 animals killed per dollar. Adding Christiano's 0.3 multiplier gives 0.00012 animals per dollar <em>invested</em> while adding the 0.0075 mutiplier determined here gives 0.000003 animals per dollar invested. This means that someone who invests $500,000 in index funds kills around 1.5-60 animals.
+                            </p>
+    </div>
+    <!-- script -->
+    <script src="darkmode.js"></script> 
+</body>
+</html> 
