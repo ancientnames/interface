@@ -8,9 +8,10 @@
 
     <!-- Side navigation -->
     <div class="sidenav">
-        <a href="reals.html">reals</a>
-        <a href="fictions.html">fictions</a>
-        <a href="thinkings.html">thinkings</a>
+        <a href="life.html">life</a>
+        <a href="fables.html">fables</a>
+        <a href="philosophy.html">philosophy</a>
+        <a href="code.html">code</a>
         <a href="about.html">about</a>
     </div>
     
@@ -18,7 +19,7 @@
     <div class="main">
         <h1>Circumventing Phone WiFi Hotspot Limitations</h1>
             <p>
-                While writing this, I use a Google Pixel 3a as my phone. While it has a WiFI hotspot feature and can successfully connect to computers, it does not provide internet access when using data (i.e. when there is no available WiFi network). This effectively makes the feature useless and, in some cases, can be <em>dangerous</em>: Someone might naively check that the WiFi hotspot connects to their computer and provides internet when the phone is connected to an at-home WiFI network and then travel somewhere where they need a connection but do not have a WiFi network, only to realize that the hotspot does not work at the exact moment they need it. 
+                While writing this, I used a Google Pixel 3a as my phone for tests. While it has a WiFI hotspot feature and can successfully connect to computers, it does not provide internet access when using data (i.e. when there is no available WiFi network). This effectively makes the feature useless and, in some cases, can be <em>dangerous</em>: Someone might naively check that the WiFi hotspot connects to their computer and provides internet when the phone is connected to an at-home WiFI network and then travel somewhere where they need a connection but do not have a WiFi network, only to realize that the hotspot does not work at the exact moment they need it. 
             </p>
             <p>
                 Here I discuss some solutions in-detail I've experimented with and have found to provide internet to my devices. I believe that these methods might also help get around issues where tethered/hotspot WiFi connections are throttled rather than completely disabled but I cannot speak to them personally. Note that my computer has a Linux operating system so most of the info will pertain to setting things up with Linux. Also note that both methods route through phone applications which may or may not actually be secure (for that, just encrypt things yourself with PGP).
@@ -122,9 +123,8 @@
                 You should see "primary DNS address 192.168.234.1" as stated in the instructions. Now you can go to <a href="http://webui.securetether.com/">http://webui.securetether.com/</a> to monitor your connection. Note that, at no point in this process should you manually tell your computer to connect to your phone via a network manager or any other way not described above; your network manager should still indicate that there are no connections.
             </p>
             <p>
-                If this does not work for you, I'd recommend restarting your computer and following the in-app instructions as accurately as possible. Usually this the desired result and you can debug from there. This method is much slower than using termux but computer applications can take advantage of it (i.e. I know how to use my desktop version of <a href="https://www.signal.org/">Signal</a> to talk with friends via SecureTether but not via termux).
+                If this does not work for you, restarting your computer and following the in-app instructions as accurately as possible should do the job. Usually this yields desired result and you can debug from there. This method is much slower than using termux but computer applications can take advantage of it (i.e. <a href="https://www.signal.org/">Signal</a> automatically uses SecureTether WiFi connection but termux will not).
             </p>
     </div>
-
 </body>
 </html> 
