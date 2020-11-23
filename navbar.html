@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>How I Added My Sidebar to a Jupyter Notebook</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+    <!-- Side navigation -->
+    <div class="sidenav">
+        <a href="life.html">life</a>
+        <a href="fables.html">fables</a>
+        <a href="philosophy.html">philosophy</a>
+        <a href="code.html">code</a>
+        <a href="index.html">about</a>
+    </div>
+    
+    <!-- main body -->
+    <div class="main">
+        <h1>How I Added My Navigation Panel to a Jupyter Notebook</h1>
+        <p>
+            Jupyter notebooks can be exported to HTML files. These exported HTML files can be edited like any other HTML file. This can be useful as part of an elaborate prank (i.e. sending someone the HTML export of a Jupyter Notebook with really esoteric nonsense code in the cells but changing the output of the cells to be surreal/haunting/mysterious/hard-to-believe ) or just for utility (adding a navigation bar so the notebook can be incorporated as a webpage). 
+        </p>
+        <p>
+            Still, you should probably be familiar with some basic HTML code before you do this. To illustrate (and to store for future reference), here is how I added the navigation panel on my Jupyter Notebooks:
+        </p>
+        <h2>Step 1: Export the Jupyter Notebook to HTML</h2>
+        <p>
+            With your Jupyter notebook open, go to "File" -> "Download As" -> "HTML (.html)" to download the Jupyter notebook as an HTML. It will then ask whether to save the notebook or open it. Open the exported HTML in your preferred web-browser. The URL/address of the exported HTML tells you the location of the file on your computer if you want to edit the file directly. Otherwise, just save it to a new location wherever you want to edit it.
+        </p>
+
+        
+        <h2>Step 2: Adding the Navigation Panel</h2>
+            <p>
+                First, place the HTML for the navigation panel in the body of the Jupyter Notebook exported HTML file. Use word-search/<code>ctrl+f</code> in a text editor (i.e. Visual Studio Code) to search for the <code>&lt;body&gt;</code> tag. Paste the navigation bar code after the tag, at the start of the body. For example, my navigation code HTML is as follows:
+            </p>
+            <code>
+                <!-- Side navigation -->
+                &lt;div class="sidenav"&gt;
+                    &lt;a href="life.html">life&lt;/a&gt;
+                    <br>
+                    &lt;a href="fables.html">fables&lt;/a&gt;
+                    <br>
+                    &lt;a href="philosophy.html">philosophy&lt;/a&gt;
+                    <br>
+                    &lt;a href="code.html">code&lt;/a&gt;
+                    <br>
+                    &lt;a href="index.html">about&lt;/a&gt;
+                &lt;/div&gt;
+            </code>
+            <p>
+                Then, right before the body tag, add any CSS that your navigation bar relies on. All my CSS is stored in a file so I just added the following code before the start of the body:
+            </p>
+            <code>
+                &lt;link rel="stylesheet" href="style.css"&gt;
+            </code>
+        <h2>Step 3: Making the Navigation Panel Consistent</h2>
+            <p>
+                At this point, you've probably noticed that the exported HTML has <em>a lot</em> of code in it. Some of it is probably altering the appearance of your side-bar. In my case, the text in my side-bar appeared with a different font and different vertical spacing than it did on other web-pages. Here is how I modified the HTML code to fix this:
+            </p>
+            <p>
+            I searched the HTML file for the following text and deleted the lines bolded in red:
+            </p>
+            <code>
+                html {
+                    <br>
+                    <b style="color:red;">font-family: sans-serif;</b>
+                    <br>
+                    -ms-text-size-adjust: 100%;
+                    <br>
+                    -webkit-text-size-adjust: 100%;
+                    <br>
+                  }
+            </code>
+            <p>
+            Then I searched the HTML file for the following text and deleted the lines bolded in red:
+            </p>
+            <code>
+                body {
+                    <br>
+                    <b style="color:red;">font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;</b>
+                    <br>
+                    font-size: 13px;
+                    <br>
+                    <b style="color:red;">line-height: 1.42857143;</b>
+                    <br>
+                    color: #000;
+                    <br>
+                    background-color: #fff;
+                    <br>
+                }
+            </code>
+            <p>
+            <p>
+                Doing this returned the font and spacing of my navigation bar to what it looks like on the rest of the (non-Jupyter) webpages. In principle, one might be able to infer that these are the lines that should be deleted from knowledge of HTML -- but the Jupyter exports tend to have thousands of lines. I actually identified these as the culprits by deleting large swathes of the Jupyter notebook files and seeing if they fixed the navigation bar. If they did, I undid my deletion and tried deleting half of what I originally did... and then half of that if it still worked. In essence, performing a binary search on the HTML code until I reached the minimal number of lines I needed to delete to solve the problem.
+            </p>
+    </div>
+</body>
+</html> 
