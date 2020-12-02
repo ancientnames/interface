@@ -38,6 +38,7 @@
             <code>
                 <!-- Side navigation -->
                 &lt;div class="sidenav"&gt;
+                    <br>
                     &lt;a href="life.html">life&lt;/a&gt;
                     <br>
                     &lt;a href="fables.html">fables&lt;/a&gt;
@@ -47,6 +48,7 @@
                     &lt;a href="code.html">code&lt;/a&gt;
                     <br>
                     &lt;a href="index.html">about&lt;/a&gt;
+                    <br>
                 &lt;/div&gt;
             </code>
             <p>
@@ -93,7 +95,10 @@
             </code>
             <p>
             <p>
-                Doing this returned the font and spacing of my navigation bar to what it looks like on the rest of the (non-Jupyter) webpages. In principle, one might be able to infer that these are the lines that should be deleted from knowledge of HTML -- but the Jupyter exports tend to have thousands of lines. I actually identified these as the culprits by deleting large swathes of the Jupyter notebook files and seeing if they fixed the navigation bar. If they did, I undid my deletion and tried deleting half of what I originally did... and then half of that if it still worked. In essence, performing a binary search on the HTML code until I reached the minimal number of lines I needed to delete to solve the problem.
+                In practice, search for these texts by copying one of these lines without any padding at the ends because subtle things might be different (e.g. just search for "line-height: 1.42857143;" instead of the whole block). Doing this returned the font and spacing of my navigation bar to what it looks like on the rest of the (non-Jupyter) webpages. 
+            </p>
+            <p>
+                In principle, one might be able to infer that these are the lines that should be deleted from knowledge of HTML -- but the Jupyter exports tend to have thousands of lines and I don't know or care how any of them work. As a reuslt, I did not do this the first time I modified an html file. Instead I identified these as the culprits by deleting large swathes of the Jupyter notebook files and seeing if they fixed the navigation bar. If they did, I undid my deletion and tried deleting half of what I originally did... and then half of that if it still worked. In essence, performing a binary search on the HTML code until I reached the minimal number of lines I needed to delete to solve the problem.
             </p>
     </div>
 </body>
